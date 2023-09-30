@@ -1,0 +1,29 @@
+{
+  "name": "devheat_beta_jyotishh",
+  "version": "1.0.0",
+  "description": "pokemon rotom for trainers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash-sojitra/Devheat_Beta_Jyotishh.git"
+  },
+  "keywords": [
+    "pokedex"
+  ],
+  "author": "yash sojitra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yash-sojitra/Devheat_Beta_Jyotishh/issues"
+  },
+  "homepage": "https://github.com/yash-sojitra/Devheat_Beta_Jyotishh#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "parser": "^0.1.4"
+  }
+}
