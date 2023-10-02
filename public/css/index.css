@@ -5,18 +5,18 @@
 }
 
 
-nav{
-    padding: 0.5rem 2rem !important;
-}
 
 .nav-brand img{
     filter:invert(1);
 }
-
 .navbar-toggler, .navbar-toggler:active {
     border: none !important;
     border-radius: 1rem;
 }
+
+
+
+
 
 .hero{
     height: 75vh;
@@ -24,7 +24,7 @@ nav{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
+    background-color: #0f0f0f;
     
 }
 #hi{
@@ -35,25 +35,25 @@ nav{
     margin-left: 5vw;
     width: 50%;
 }
-
 .heading h1{
     display: block;
     font-size: 4rem;
     padding: 2rem 0rem;
     font-weight: bolder;
+    color: white;
 }
-
 .pokedex img{
     height: 32rem;
     transform: translateX(9rem);
 }
-
 .search{
     margin-top: 2vw;
     display: flex;
     font-size: 1.1rem !important;
 }
-
+.search:focus{
+    box-shadow: #222 3px 0 30px;
+}
 .search input{
     padding: 0.5rem;
     border-radius: 0.4rem;
@@ -69,22 +69,43 @@ nav{
 
 
 
+.list-pok h1{
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    padding-left: 3.5%;
+    font-weight: bolder;
+    color: white;
+}
 .body{
     position: relative;
-    background: linear-gradient(180deg,rgb(255, 255, 255,0) 0rem,rgb(255, 255, 255,0.5)3rem,rgba(255, 255, 255,1) 6rem);
+    background-color:#0f0f0f;
+    background: linear-gradient(180deg,rgba(15,15,15,0) 0,#0f0f0f 6rem);
     margin-top: 0px;
     padding: 20px;
     height: 100vh;
-    padding-top: 6rem;
+    padding-top: 2.5rem;
 }
 .card-poke{
-    background-color: aquamarine;
     width: 100%;
-    border: 2px solid black !important;
+    border: 2px solid grey !important;
+    background: #0A0A0A;
+    color: #222;
     border-radius: 1rem;
     padding: 1.5rem 1rem;
     margin: 1rem 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    transition: 0.1s ease-out;
 }
+.card-poke:hover{
+    border: 0px solid grey !important; 
+    box-shadow: #222 3px 0 30px;
+    border-radius: 1.2rem;
+    color: rgb(0, 0, 0);    
+    scale: 1.08;
+}
+
 .card-poke img{
     width: 100%;
 }
@@ -93,9 +114,7 @@ nav{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     width: 100%;
+    margin-top: 1rem;
+    color: #ffffff;
 }
-
-
-
-
 
