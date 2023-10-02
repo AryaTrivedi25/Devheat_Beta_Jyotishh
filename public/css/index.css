@@ -69,22 +69,32 @@ nav{
 
 
 
-
 .body{
     position: relative;
-    background: linear-gradient(180deg,rgb(255, 255, 255,0) 0rem,rgba(255, 255, 255,1) 20rem);
-    
-    /* background: linear-gradient(180deg,rgba(255, 255, 255,0) 0%,black 100%); */
+    background: linear-gradient(180deg,rgb(255, 255, 255,0) 0rem,rgb(255, 255, 255,0.5)3rem,rgba(255, 255, 255,1) 6rem);
     margin-top: 0px;
     padding: 20px;
     height: 100vh;
+    padding-top: 6rem;
 }
-.card{
-    height: 25px !important;
+.card-poke{
     background-color: aquamarine;
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid black !important;
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
 }
+.card-poke img{
+    width: 100%;
+}
+.desc{
+    font-size: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    width: 100%;
+}
+
 
 
 
