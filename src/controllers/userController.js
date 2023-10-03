@@ -66,4 +66,15 @@ const signin = (res,req) => {
     console.log(signin);
 }
 
-module.exports = {signup, signin};
+const addFavourite = (res,req) =>{
+
+    let id = req.params.id;
+
+    //decrypting user token
+    //searching ussername in database
+    //if not found say him to log in or sign up first
+    //inserting id into favorites
+
+}
+
+module.exports = {signup, signin, addFavourite};

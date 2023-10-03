@@ -13,13 +13,13 @@ const app = express();
 
 // necessary middleware settings for express
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("../public"));
+app.use("/static",express.static("public"));
 app.set('view engine', 'ejs');
 app.use(express.json());
 
 // all the routes are defined here
-app.use("/users", userRouter);
-app.use("/home", pokeRouter);
+app.use("/user", userRouter);
+app.use("/", pokeRouter);
 
 app.listen(3000, function () {
     console.log("server started at port 3000");
