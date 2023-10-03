@@ -5,13 +5,19 @@
 }
 
 
-
+.body-bg{
+    background-color: #0f0f0f;
+}
 .nav-brand img{
     filter:invert(1);
 }
 .navbar-toggler, .navbar-toggler:active {
     border: none !important;
     border-radius: 1rem;
+}
+.my-nav{
+    background-color: #0f0f0f;
+    padding: 0.8rem 2rem !important;
 }
 
 
@@ -25,7 +31,7 @@
     align-items: center;
     overflow: hidden;
     background-color: #0f0f0f;
-    
+    z-index: -1;
 }
 #hi{
     position: sticky;
@@ -97,6 +103,8 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
     transition: 0.1s ease-out;
+    height: 17rem !important;
+    text-decoration: none;
 }
 .card-poke:hover{
     border: 0px solid grey !important; 
