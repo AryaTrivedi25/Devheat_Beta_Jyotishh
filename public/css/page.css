@@ -170,5 +170,29 @@ my-button:hover span:after {
     justify-content: center;
     align-items: center;
     padding: 0.3rem;
+    margin: 0.1rem;
+    height: 3.5rem;
 }
 
+.moveset{
+    height: 50%;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color:#1e1e1e;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #0f0f0f;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0a0a0a;
+  }

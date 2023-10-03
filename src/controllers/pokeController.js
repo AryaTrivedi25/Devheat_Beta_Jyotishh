@@ -6,7 +6,7 @@ const generate = async (req, res) => {
 //this function generates 30 random pokemons
 
     let array = [];
-    let url = `https://pokeapi.co/api/v2/pokemon/?limit=1000`;
+    let url = `https://pokeapi.co/api/v2/pokemon/?limit=100`;
     let promise = new Promise((resolve, reject) => {
 
         https.get(url, res => {
@@ -71,7 +71,6 @@ const details = async (req,res)=>{
         });
     })
     let pokemonData = await promise;
-    res.send("<h1>" + pokemonData.forms[0].name + "</h1>")
     res.render("pokemon",{data:pokemonData});
 }
 

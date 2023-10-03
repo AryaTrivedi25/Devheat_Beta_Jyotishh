@@ -131,9 +131,23 @@ const addFavourite = async (req, res) => {
 
     let returnString = favourites.join();
 
-    //store return string in the p_id of username.
+    try {
+        let insertQuery = ``;
+        connection.execute(insertQuery, (err, result, fields) => {
+            if (err) {
+                console.error('error connecting: ' + err.stack);
+                reject("err");
+            }
+            resolve(result);
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: error })
+    }
 
     res.status(200).json({ msg: returnString })
+    //store return string in the p_id of username.
+
 }
 
 
@@ -157,9 +171,39 @@ const profilePage = async (req, res) => {
 
     let favourites = favouriteString[0].split(',');
 
+    for (let id = 0; id < favourites.length; id++) {
+        const element = favourites[id];
+        
+        let pokemon = await onePokemon(favourites[id]);
 
+        
+
+    }
+
+    res.render("profile", { username: username, })
 
 }
+
+const onePokemon = (id) => {
+    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    let promise = new Promise((resolve, reject) => {
+
+        https.get(url, res => {
+            let result = '';
+
+            res.on('data', data => {
+                result += data;
+            });
+            res.on('end', () => {
+                let pokemon = JSON.parse(result);
+                resolve(pokemon);
+            });
+
+        });
+    })
+}
+
+
 
 
 module.exports = { signup, signin, addFavourite, profilePage };
