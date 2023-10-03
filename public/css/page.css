@@ -1,12 +1,13 @@
-/* css for background */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.body-bg{
-    background-color: #0f0f0f;
+.back-bg{
+    background-color: #0f0f0f !important;
 }
+
+
 .nav-brand img{
     filter:invert(1);
 }
@@ -15,15 +16,159 @@
     border-radius: 1rem;
 }
 .my-nav{
-    background-color: #0f0f0f;
+    background-color: #0f0f0f !important;
     padding: 0.8rem 2rem !important;
+    margin-bottom: 1rem;
 }
 
 
 
-.card{
-    border: 1rem solid grey;
-    background-color: aqua;
+
+.card-bg{
+    background-color: #0f0f0f !important;
+    border-radius:  2rem;
+    border: 0rem solid rgb(255, 255, 255);
+    height: 85vh;
+}
+.top-card{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 50%;
+    background-color: #0f0f0f;
+    padding: 1rem;
+
+}
+.card-img{
+    
+    max-width:70% !important;
+    max-height: 90%;
+}
+.bottom-card{
+    padding: 1.5rem;
+    height: 50%;
+    background-color: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+}
+.bottom-card h2{
+    float: left;
+    color: white;
+    margin-bottom: 0.5rem;
+    
+}
+.mini-det{
+    
+}
+.mini-det h5{
+    float: left;
+    color: white;
+    font-weight: 100;
+    margin-bottom: 1rem;
+    padding-left: 0.8rem;
+    
+}
+.name-like{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
+
+
+/* css for like button */
+my-button {
+    display: inline-block;
+    border-radius: 1rem !important;
+    background-color: #1e1e1e;
+    border: 0.1rem solid grey;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1rem !important;
+    padding: 16px;
+    width: 173px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+   
+my-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    border: none !important;
+}
+   
+my-button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+    border: none !important;
+    
+
+}
+   
+my-button:hover span {
+    padding-right: 15px;
+}
+   
+my-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+
+
+.card-bg2{
+    background-color: #1e1e1e !important;
+    border-radius:  2rem;
+    border: 0rem solid rgb(255, 255, 255);
+    height: 85vh;
+    box-shadow: #222 4px 0 20px;
+    padding: 1.5rem 2rem !important;
+}
+.card-bg2 h3 , .card-bg2 h6{
+    color: white;
+    float: left;
+}
+.my-profress{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.my-prog{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem !important;
+}
+
+
+
+
+.my-row{
+    margin-top: 1.8rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.my-move{
+    border-radius: 1rem;
+    border: 0.01rem solid grey;
+    background-color: #0f0f0f !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+}
 
