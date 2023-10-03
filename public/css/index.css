@@ -5,8 +5,8 @@
 }
 
 
-.back-bg{
-    background-color: #0f0f0f !important;
+.body-bg{
+    background-color: #0f0f0f;
 }
 .nav-brand img{
     filter:invert(1);
@@ -16,7 +16,7 @@
     border-radius: 1rem;
 }
 .my-nav{
-    background-color: #0f0f0f !important;
+    background-color: #0f0f0f;
     padding: 0.8rem 2rem !important;
 }
 

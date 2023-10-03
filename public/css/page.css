@@ -1,0 +1,29 @@
+/* css for background */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body-bg{
+    background-color: #0f0f0f;
+}
+.nav-brand img{
+    filter:invert(1);
+}
+.navbar-toggler, .navbar-toggler:active {
+    border: none !important;
+    border-radius: 1rem;
+}
+.my-nav{
+    background-color: #0f0f0f;
+    padding: 0.8rem 2rem !important;
+}
+
+
+
+.card{
+    border: 1rem solid grey;
+    background-color: aqua;
+}
+
+
