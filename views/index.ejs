@@ -13,8 +13,8 @@
       crossorigin="anonymous">
   </head>
 
-<body class="back-bg" >
-  <nav class="navbar mynav navbar-dark sticky-top ">
+<body class="back-bg">
+  <nav class="navbar my-nav navbar-dark sticky-top ">
     <div class="container-fluid">
       <a class="navbar-brand" href="/index.ejs"><img src="/static/images/logo.svg" alt=""></a>
       <button class="navbar-toggler nav-botton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
@@ -40,8 +40,8 @@
               <a class="nav-link" href="#">Log out</a>
             </li>
           </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex mt-3"  role="search">
+            <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-dark" type="submit">Search</button>
           </form>
         </div>
@@ -89,10 +89,14 @@
           <a href="./pokemon/<%= data.results[i].name %>"
             class="col-6 col-sm-4 col-md-3 col-lg-2">
             <div class="card-poke">
-              <img
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/<%= i+1 %>.svg"
-                alt="pok" class="animal">
-              <h1 class="desc"><%= data.results[i].name %></h1>
+              <div class="poke-img">
+                <img
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/<%= i+1 %>.svg"
+                  alt="pok" class="animal">
+              </div>
+              <div class="poke-name">
+                <h1 class="desc"><%= data.results[i].name %></h1>
+              </div>
             </div>
           </a>
           <% } %>

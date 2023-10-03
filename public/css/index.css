@@ -5,8 +5,8 @@
 }
 
 
-.body-bg{
-    background-color: #0f0f0f;
+.back-bg{
+    background-color: #0f0f0f !important;
 }
 .nav-brand img{
     filter:invert(1);
@@ -16,7 +16,7 @@
     border-radius: 1rem;
 }
 .my-nav{
-    background-color: #0f0f0f;
+    background-color: #0f0f0f !important;
     padding: 0.8rem 2rem !important;
 }
 
@@ -31,7 +31,6 @@
     align-items: center;
     overflow: hidden;
     background-color: #0f0f0f;
-    z-index: -1;
 }
 #hi{
     position: sticky;
@@ -89,9 +88,13 @@
     background: linear-gradient(180deg,rgba(15,15,15,0) 0,#0f0f0f 6rem);
     margin-top: 0px;
     padding: 20px;
-    height: 100vh;
     padding-top: 2.5rem;
 }
+
+.row a{
+    text-decoration: none;
+}
+
 .card-poke{
     width: 100%;
     border: 2px solid grey !important;
@@ -101,10 +104,12 @@
     padding: 1.5rem 1rem;
     margin: 1rem 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer;
     transition: 0.1s ease-out;
-    height: 17rem !important;
-    text-decoration: none;
+    height: 18rem !important;
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
 }
 .card-poke:hover{
     border: 0px solid grey !important; 
@@ -114,9 +119,21 @@
     scale: 1.08;
 }
 
-.card-poke img{
+.poke-img{
+    height: 80%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.poke-name{
+    height: 20%;
     width: 100%;
 }
+.poke-img img{
+    max-height: 80%;
+    max-width: 100%;
+}
+
 .desc{
     font-size: 2vw;
     font-family: Arial, Helvetica, sans-serif;
