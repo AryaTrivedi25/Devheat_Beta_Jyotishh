@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .back-bg{
     background-color: #0f0f0f !important;
 }
@@ -130,8 +129,8 @@
     width: 100%;
 }
 .poke-img img{
-    max-height: 80%;
-    max-width: 100%;
+    height: 10rem;
+    width: 90%;
 }
 
 .desc{
