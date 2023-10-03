@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 
-
-.body-bg{
-    background-color: #0f0f0f;
+.back-bg{
+    background-color: #0f0f0f !important;
 }
 .nav-brand img{
     filter:invert(1);
@@ -16,7 +15,7 @@
     border-radius: 1rem;
 }
 .my-nav{
-    background-color: #0f0f0f;
+    background-color: #0f0f0f !important;
     padding: 0.8rem 2rem !important;
 }
 
@@ -130,8 +129,8 @@
     width: 100%;
 }
 .poke-img img{
-    max-height: 80%;
-    max-width: 100%;
+    height: 10rem;
+    width: 90%;
 }
 
 .desc{
