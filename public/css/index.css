@@ -79,9 +79,9 @@
     display: block;
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    padding-left: 3.5%;
     font-weight: bolder;
     color: white;
+    float: left;
 }
 .body{
     position: relative;
