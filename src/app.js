@@ -13,7 +13,7 @@ const app = express();
 
 // necessary middleware settings for express
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("../public"));
+app.use("/static",express.static("public"));
 app.set('view engine', 'ejs');
 app.use(express.json());
 
