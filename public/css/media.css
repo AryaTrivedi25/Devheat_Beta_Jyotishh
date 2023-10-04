@@ -1,0 +1,84 @@
+@media (min-width:0px) and (max-width:400px){
+    .hero{
+        flex-direction: column;
+        height: 90vh;
+        padding: 3.5rem;
+    }
+    .pokedex img{
+        transform: translateX(0rem) !important;
+        max-width: 100%;
+        margin-top: 3rem;
+    }
+    .tagline{
+        width:100%;
+        margin-left: 0vw;
+        text-align: center;
+    }
+    
+    .heading h1{
+        font-size: 2.5rem !important;
+        padding: 1rem 0rem;
+        font-weight: bolder;
+        color: white;
+    }
+    .my-nav img{
+        width: 50%;
+    }
+    .my-nav{
+        background-color: #0f0f0f !important;
+        padding: 0.8rem 1rem !important;
+    }
+    .container-fluid{
+        width: fit-content;
+    }
+    
+    #hi{
+        position: static;
+        top: none;
+    }
+}
+@media (min-width:400px) and (max-width:760px){
+    .hero{
+        flex-direction: column;
+        height: 90vh;
+        padding: 3.5rem;
+        display: flex;
+    }
+    .pokedex img{
+        transform: translateX(0rem) !important;
+        max-width: 100%;
+        margin-top: 3rem;
+    }
+    .tagline{
+        width:100%;
+        margin-left: 0vw;
+        text-align: center;
+    }
+    
+    .heading h1{
+        font-size: 3rem !important;
+        padding: 1rem 0rem;
+        font-weight: bolder;
+        color: white;
+    }
+    
+    #hi{
+        position: static;
+        top: none;
+    }
+}
+@media (min-width:760px) and (max-width:1120px){
+    .hero{
+        flex-direction: column;
+        height: 90vh;
+        padding: 3.5rem;
+        flex-wrap: wrap;
+    }
+    .heading h1{
+        font-size: 4rem !important;
+        padding: 1rem 0rem;
+        font-weight: bolder;
+        color: white;
+    }
+   
+}
