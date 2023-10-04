@@ -9,9 +9,11 @@ const auth = (req, res, next) => {
             token = token.split(" ")[1];
             let user = jwt.verify(token, process.env.SECRET_KEY)
             req.username = user.name;
+            req.isUser = 1;
         }
         else {
-            res.send("unauthorised").status(401).json({ message: "unauthorised user" });
+            req.isUser = 0;
+            res.sendFile("../../public/html/login.html").status(401).json({ message: "unauthorised user" });
         }
         next();
     }

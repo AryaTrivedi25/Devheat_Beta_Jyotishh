@@ -11,10 +11,10 @@ DESC user
 
 --@BLOCK
 
-INSERT INTO user VALUES ("A@bbb.com","aaarya","efegwerfvbgqerwefsbgasdffasdvfrgtewfsdgrtewf","{\"list\":[]}");
+INSERT INTO user VALUES ("A@bbb.com","aaarya","efegwerfvbgqerwefsbgasdffasdvfrgtewfsdgrtewf",'{}');
 
 --@block
-
+UPDATE user SET p_id = '{}' WHERE u_name LIKE 'YASHSOJITRASU';
 
 --@block
 
@@ -27,3 +27,7 @@ SELECT u_email FROM user WHERE u_email LIKE 'A@b.com';
 --@block
 
 SELECT pass FROM user WHERE u_name LIKE 'Yash';
+
+--@block
+
+ 

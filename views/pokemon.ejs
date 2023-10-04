@@ -19,7 +19,7 @@
   <body class="back-bg">
     <nav class="navbar my-nav navbar-dark sticky-top ">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/static/css/logo.svg" alt></a>
+        <a class="navbar-brand" href="#"><img src="/static/css/images/logo.svg" alt></a>
         <button class="navbar-toggler nav-botton" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
           aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -40,13 +40,10 @@
                 <a class="nav-link active" aria-current="page" href="./">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Log out</a>
+                <a class="nav-link" onclick="sendToken(`../user/profile`)">My profile</a>
               </li>
             </ul>
-            <form class="d-flex mt-3" role="search">
+            <form class="d-flex mt-3" action="/search" method="post" role="search">
               <input class="form-control me-2" type="text" placeholder="Search"
                 aria-label="Search">
               <button class="btn btn-dark" type="submit">Search</button>
@@ -68,7 +65,7 @@
             <div class="name-like">
               <h2><%= data.name %></h2>
               <my-button>
-                <form action="./user/<%= data.id %>/favourites"><span>Add to favourites</span></form>
+                <form onclick="sendToken(`./user/<%= data.id %>-<%= data.name %>/favourites`)"><span>Add to favourites</span></form>
               </my-button>
             </div>
             <div class="mini-det">
@@ -130,38 +127,10 @@
               </div>
             </div>
             <% } %>
-
-            <!-- <div class="col-4 col-md-2">
-              <div class="my-move">
-                <h6>powerful</h6>
-              </div>
-            </div>
-            <div class="col-4 col-md-2">
-              <div class="my-move">
-                <h6>powerful</h6>
-              </div>
-            </div>
-            <div class="col-4 col-md-2">
-              <div class="my-move">
-                <h6>powerful</h6>
-              </div>
-            </div>
-            <div class="col-4 col-md-2">
-              <div class="my-move">
-                <h6>powerful</h6>
-              </div>
-            </div>
-            <div class="col-4 col-md-2">
-              <div class="my-move">
-                <h6>powerful</h6>
-              </div>
-            </div> -->
           </div>
-
         </div>
-
       </div>
     </div>
-
   </body>
+  <script src="/static/js/token.js"></script>
 </html>

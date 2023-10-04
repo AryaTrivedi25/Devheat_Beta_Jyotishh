@@ -53,8 +53,11 @@ const search = async (req, res) => {
 }
 
 const details = async (req,res)=>{
-    let name = req.params.name;
-    let url = `https://pokeapi.co/api/v2/pokemon/${name}`;
+    let name = req.params.pair.split("-");
+
+    //console.log(name);
+
+    let url = `https://pokeapi.co/api/v2/pokemon/${name[1]}`;
     let promise = new Promise((resolve, reject) => {
 
         https.get(url, res => {
@@ -71,7 +74,7 @@ const details = async (req,res)=>{
         });
     })
     let pokemonData = await promise;
-    res.render("pokemon",{data:pokemonData});
+    res.render("pokemon",{data:pokemonData, id:name[0]});
 }
 
 module.exports = {generate, search, details};

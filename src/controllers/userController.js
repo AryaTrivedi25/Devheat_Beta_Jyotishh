@@ -3,8 +3,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { log } = require('console');
 
-const SECRET_KEY = "dvsvffsdvfgrdsavbrgfsvf";
-
 //creatisonnebgoken and connecting to database
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -63,15 +61,13 @@ function query(email) {
     return promise;
 }
 
-
 //function to process signin request
 const signin = async (req, res) => {
 
     const { username, password } = req.body;
 
     let promise = new Promise((resolve, reject) => {
-
-        let query = `SELECT pass FROM user WHERE u_name LIKE "${username}";`;
+        let query = `SELECT pass FROM user WHERE u_name LIKE "${username}"`;
         connection.execute(query, (err, result, fields) => {
             if (err) {
                 console.error('error connecting: ' + err.stack);
@@ -101,12 +97,50 @@ const signin = async (req, res) => {
 
 const addFavourite = async (req, res) => {
 
-    let id = req.params.id;
+    let param = req.params.pair.split("-");
+
+    let id = param[0];
+    let pokename = param[1];
 
     let username = req.username;
 
-    let promise = new Promise((resolve, reject) => {
+    const arr = await p_idQuery(username);
 
+    let JSONData = JSON.parse(arr[0].p_id);
+    
+    let check = id in JSONData;
+    
+    if(!check){
+        JSONData[pokename] = id;
+    }
+    else{
+        res.status(401).json({msg:"user already exists"});
+    }
+    
+    let insertStr = JSON.stringify(JSONData);
+    console.log("2" + insertStr);
+
+    try {
+        let insertQuery = `UPDATE user SET p_id = '${insertStr}' WHERE u_name LIKE '${username}';`;
+        connection.execute(insertQuery, (err, result, fields) => {
+            if (err) {
+                console.error('error connecting: ' + err.stack);
+                reject("err");
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: error })
+    }
+
+    res.status(200).json({ msg: 'done' })
+
+}
+
+
+function p_idQuery(username) {
+    return new Promise((resolve, reject) => {
+        
         let query = `SELECT p_id FROM user WHERE u_name LIKE "${username}";`;
         connection.execute(query, (err, result, fields) => {
             if (err) {
@@ -116,38 +150,6 @@ const addFavourite = async (req, res) => {
             resolve(result);
         })
     })
-
-    let fString = await promise;
-
-    let favourites = [];
-
-    if (fString[0].length > 0) {
-        favourites = fString[0].split(',');
-        console.log(favourites);
-        res.status(200).json({ msg: favourites })
-    }
-
-    favourites.push(id);
-
-    let returnString = favourites.join();
-
-    try {
-        let insertQuery = ``;
-        connection.execute(insertQuery, (err, result, fields) => {
-            if (err) {
-                console.error('error connecting: ' + err.stack);
-                reject("err");
-            }
-            resolve(result);
-        })
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ msg: error })
-    }
-
-    res.status(200).json({ msg: returnString })
-    //store return string in the p_id of username.
-
 }
 
 
@@ -155,55 +157,26 @@ const profilePage = async (req, res) => {
 
     let username = req.username;
 
-    let promise = new Promise((resolve, reject) => {
+    const arr = await p_idQuery(username);
 
-        let query = `SELECT p_id FROM user WHERE u_name LIKE "${username}";`;
-        connection.execute(query, (err, result, fields) => {
-            if (err) {
-                console.error('error connecting: ' + err.stack);
-                reject("err");
-            }
-            resolve(result);
-        })
-    })
+    let JSONData = JSON.parse(arr[0].p_id);
 
-    let favouriteString = await promise;
+    let keys = Object.keys(JSONData);
 
-    let favourites = favouriteString[0].split(',');
+    const result = [];
 
-    for (let id = 0; id < favourites.length; id++) {
-        const element = favourites[id];
-        
-        let pokemon = await onePokemon(favourites[id]);
+    console.log(JSONData);
 
-        
+    keys.forEach(key => {
+        console.log(key);
 
-    }
+        result.push({key:JSONData.key})
+    });
 
-    res.render("profile", { username: username, })
+    console.log(result);
 
+    res.render("profile", { username: username, data:result})
 }
-
-const onePokemon = (id) => {
-    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    let promise = new Promise((resolve, reject) => {
-
-        https.get(url, res => {
-            let result = '';
-
-            res.on('data', data => {
-                result += data;
-            });
-            res.on('end', () => {
-                let pokemon = JSON.parse(result);
-                resolve(pokemon);
-            });
-
-        });
-    })
-}
-
-
 
 
 module.exports = { signup, signin, addFavourite, profilePage };

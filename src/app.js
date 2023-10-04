@@ -8,6 +8,7 @@ const mysql = require("mysql2");
 const { log } = require("console");
 const userRouter = require("./routes/userRoute");
 const pokeRouter = require("./routes/pokeRoute");
+const auth = require("./middleware/auth");
 
 //running the express
 const app = express();
@@ -20,7 +21,7 @@ app.use(express.json());
 
 // all the routes are defined here
 app.use("/user", userRouter);
-app.use("/", pokeRouter);
+app.use("/",pokeRouter);
 
 app.listen(3000, function () {
     console.log("server started at port 3000");

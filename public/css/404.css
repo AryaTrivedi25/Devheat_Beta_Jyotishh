@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+section{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: #0f0f0f;
+}
+.body{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    border: 2px solid #424242;
+    border-radius: 3rem;
+}
+.heading{
+    display: flex;
+    align-items: first baseline baseline;
+    justify-content: center;
+}
+.img img{
+    height: 15vw;
+}
+.heading h1{
+    font-size: 10vw;
+    margin: 2.5rem 0;
+    color: white;
+    padding: 0 2rem;
+}
+.title h3{
+    color: white;
+    font-size: 3vw;
+}
+.button button{
+    font-size: 1rem;
+    margin: 1rem 0;
+}

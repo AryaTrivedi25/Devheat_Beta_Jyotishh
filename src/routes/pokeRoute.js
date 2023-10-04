@@ -11,6 +11,6 @@ pokeRouter.get("/",generate)
 pokeRouter.post("/search",search)
 
 //get request for specific pokemon page
-pokeRouter.get("/pokemon/:name",details)
+pokeRouter.get("/pokemon/:pair",details)
 
 module.exports = pokeRouter;
