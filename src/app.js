@@ -9,6 +9,7 @@ const { log } = require("console");
 const userRouter = require("./routes/userRoute");
 const pokeRouter = require("./routes/pokeRoute");
 const auth = require("./middleware/auth");
+const path = require("path");
 
 //running the express
 const app = express();
@@ -22,6 +23,11 @@ app.use(express.json());
 // all the routes are defined here
 app.use("/user", userRouter);
 app.use("/",pokeRouter);
+
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname,"../public/html/404.html"))
+  })
 
 //starting the app on localhost
 app.listen(3000, function () {
