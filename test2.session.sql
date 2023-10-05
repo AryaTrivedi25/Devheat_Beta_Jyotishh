@@ -72,7 +72,7 @@ SELECT * FROM user;
 
 --@block
 
-DELETE FROM user WHERE u_name LIKE 'yashsojitra97';
+DELETE FROM user;
 
 --@block
 
