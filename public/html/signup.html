@@ -4,33 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign-up</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <div class="back-login">
         <div class="form-container">
             <p class="title">Sign-up</p>
-            <form class="form">
+            <form class="form" method="post">
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
                 </div>
                 <div class="input-group">
-                    <label for="username">Email</label>
-                    <input type="text" name="Email" id="Email" placeholder="">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="">
+                    <input type="password" name="password" id="password">
                     
                 </div>
-                <button class="sign">Sign up</button>
+                <button type="submit" onclick="onPost()" class="sign">Sign up</button>
             </form>
             
             <p class="signup">Already have an account?
-                <a rel="noopener noreferrer" href="./login.html" class="">Sign in</a>
+                <a rel="noopener noreferrer" href="./signin" class="">Sign in</a>
             </p>
         </div>
     </div>
 </body>
+<script src="/static/js/signup.js"></script>
 </html>

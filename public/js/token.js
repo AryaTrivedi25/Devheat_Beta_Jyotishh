@@ -1,49 +1,66 @@
+
+if (document.querySelector('.sign')) {
+    document.querySelector('.sign').addEventListener('click',
+        function (event) {
+            event.preventDefault();
+        });
+
+}
+
+
 async function getToken() {
 
-    
-
-    let username = document.querySelector(".username");
-    let password = document.querySelector(".password");
+    let username = document.querySelector("#username");
+    let password = document.querySelector("#password");
 
     let user = {
-        username: username.innerText,
-        password: password.innerText
+        username: username.value,
+        password: password.value
     }
 
-    let response = await fetch("/user/signin", {
+    console.log(JSON.stringify(user));
+
+    let response = await fetch("http://localhost:3000/user/signin", {
         method: 'POST',
         headers: {
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(user)
-        }
-    });
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
 
-    if (response.ok) {
-        let json = await response.json();
+    let result = await response.json();
 
-        sessionStorage.setItem("key", json.token);
+    let token = result.token;
+    sessionStorage.setItem("token", token);
 
-    } else {
-        alert("HTTP-Error: " + response.status);
+    if (result.redirectTo) {
+        window.location.href = result.redirectTo;
     }
 }
 
 async function sendToken(url) {
-    
-    let token = sessionStorage.getItem("token");
 
-    let response = await fetch(url, {
+    token = sessionStorage.getItem("token");
+    console.log(token);
+
+    const response = await fetch(url, {
         headers: {
             Authorization: `Bearer ${token}`
         }
-    }); 
+    });
 
-    if (response.ok) {
-        console.log(response.status);
+    let result = await response.json();
 
-    } else {
-        alert("HTTP-Error: " + response.status);
+    if (result.redirectTo) {
+        window.location.href = result.redirectTo;
+    }
+
+    if (result.status) {
+        window.alert("added to favourites succesfully!!")
+    }
+
+    if (result.profile) {
+        document.querySelector("#username").value = result.username;
+        document.querySelector("#form").submit();
     }
 }

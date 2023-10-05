@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,15 +9,14 @@
     <div class="back-login">
         <div class="form-container">
             <p class="title">Login</p>
-            <form class="form" method="post">
+            <form class="form">
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="">
+                    <label style="color:<%= color %>;" for="username">Username</label>
+                    <input type="text" style="border-color:<%= color %>;" name="username" id="username" placeholder="">
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="">
-                    
+                    <label style="color:<%= color %>;" for="password">Password</label>
+                    <input type="password" style="border-color:<%= color %>;" name="password" id="password" placeholder="">
                 </div>
                 <button class="sign" onclick="getToken()">Sign in</button>
             </form>

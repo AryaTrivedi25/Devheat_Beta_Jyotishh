@@ -23,6 +23,7 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use("/",pokeRouter);
 
+//starting the app on localhost
 app.listen(3000, function () {
     console.log("server started at port 3000");
 })

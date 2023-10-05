@@ -1,25 +1,25 @@
-const jwt = require("jsonwebtoken")
+require("dotenv").config();
+const jwt = require('jsonwebtoken');
 
+//used jwt token
+//function to authenticate users who are logged in and trying to use user functionalities
 const auth = (req, res, next) => {
 
-    try {
+    let token = req.headers.authorization;
+    tokens = token.split(" ");
 
-        let token = req.headers.authorization;
-        if (token) {
-            token = token.split(" ")[1];
-            let user = jwt.verify(token, process.env.SECRET_KEY)
+    if (!(tokens[1] == 'null')) {
+        try {
+            let user = jwt.verify(tokens[1], process.env.SECRET_KEY);
             req.username = user.name;
-            req.isUser = 1;
         }
-        else {
-            req.isUser = 0;
-            res.sendFile("../../public/html/login.html").status(401).json({ message: "unauthorised user" });
+        catch (err) {
+            return res.redirect("http://localhost:3000/user/signin")
         }
         next();
     }
-    catch(err){
-        console.log(err);
-        res.status(500).json({message:"internal error"})
+    else{
+        return res.status(500).json({ message: "internal error", redirectTo:"http://localhost:3000/user/signin"})
     }
 }
 

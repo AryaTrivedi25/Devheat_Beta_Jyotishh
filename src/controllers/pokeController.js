@@ -2,7 +2,6 @@ const https = require('https');
 
 
 const generate = async (req, res) => {
-
 //this function generates 30 random pokemons
 
     let array = [];
@@ -11,7 +10,6 @@ const generate = async (req, res) => {
 
         https.get(url, res => {
             let result = '';
-
             res.on('data', data => {
                 result += data;
             });
@@ -19,7 +17,6 @@ const generate = async (req, res) => {
                 let pokemon = JSON.parse(result);
                 resolve(pokemon);
             });
-
         });
     })
     let pokemonData = await promise;
@@ -27,6 +24,7 @@ const generate = async (req, res) => {
     res.render('index', {search:0, data:pokemonData})
 }
 
+//this fuction gives search functionality to the site
 const search = async (req, res) => {
 
     let name = req.body.pokemon;
@@ -37,25 +35,22 @@ const search = async (req, res) => {
 
         https.get(url, res => {
             let result = '';
-
             res.on('data', data => {
                 result += data;
             });
             res.on('end', () => {
-                let pokemon = JSON.parse(result);
+                let pokemon = result;
                 resolve(pokemon);
             });
-
         });
     })
     let pokemonData = await promise;
     res.render("index", {search:1, data:pokemonData})
 }
 
+//this gives data of a particular pokemon to the details page
 const details = async (req,res)=>{
     let name = req.params.pair.split("-");
-
-    //console.log(name);
 
     let url = `https://pokeapi.co/api/v2/pokemon/${name[1]}`;
     let promise = new Promise((resolve, reject) => {
