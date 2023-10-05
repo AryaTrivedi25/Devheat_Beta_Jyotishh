@@ -1,4 +1,11 @@
+@font-face {
+    font-family: pokemon;
+    src: url(./fonts/pokemon_fire_red.ttf);
+}
+
+
 *{
+    font-family: 'Gabarito', cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -43,7 +50,9 @@
     margin-left: 8vw;
     width: 50%;
 }
+
 .heading h1{
+    font-weight: 800;
     display: block;
     font-size: 4rem;
     padding: 2rem 0rem;
@@ -150,8 +159,8 @@
 }
 
 .desc{
-    font-size: clamp(2rem, 2.5vw, 2rem);
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     width: 100%;
     margin-top: 1rem;
@@ -208,11 +217,21 @@
     .search{
         margin-top: 0.1rem !important;
     }
-    .search input{
-    }
-
 
 }
+
+@media (min-width:400px) and (max-width:1300px){
+    .desc{
+        font-size: 0.8rem;
+    }      
+}
+
+@media (min-width:100px) and (max-width:400px){
+    .desc{
+        font-size: 0.6rem;
+    }      
+}
+
 @media (min-width:474px) and (max-width:670px){
 
     #hi{

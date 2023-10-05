@@ -1,31 +1,40 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body class="back">
-    <div class="back-login">
-        <div class="form-container">
-            <p class="title">Login</p>
-            <form class="form">
-                <div class="input-group">
-                    <label style="color:<%= color %>;" for="username">Username</label>
-                    <input type="text" style="border-color:<%= color %>;" name="username" id="username" placeholder="">
-                </div>
-                <div class="input-group">
-                    <label style="color:<%= color %>;" for="password">Password</label>
-                    <input type="password" style="border-color:<%= color %>;" name="password" id="password" placeholder="">
-                </div>
-                <button class="sign" onclick="getToken()">Sign in</button>
-            </form>
-            
-            <p class="signup">Don't have an account?
-                <a rel="noopener noreferrer" href="./signup" class="">Sign up</a>
-            </p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/style.css">
+
+    </head>
+    <body class="back">
+        <div class="back-login">
+            <div class="form-container">
+                <p class="title">Login</p>
+                <form class="form">
+                    <div class="input-group">
+                        <label style="color:<%= color %>;" for="username">Username</label>
+                        <input type="text" style="border-color:<%= color %>;"
+                            name="username" id="username" placeholder>
+                    </div>
+                    <div class="input-group">
+                        <label style="color:<%= color %>;" for="password">Password</label>
+                        <input type="password"
+                            style="border-color:<%= color %>;" name="password"
+                            id="password" placeholder>
+                    </div>
+                    <button class="sign" onclick="getToken()">Sign in</button>
+                </form>
+
+                <p class="signup">Don't have an account?
+                    <a rel="noopener noreferrer" href="./signup" class>Sign up</a>
+                </p>
+            </div>
         </div>
-    </div>
-</body>
-<script src="/static/js/token.js"></script>
+    </body>
+    <script src="/static/js/token.js"></script>
 </html>

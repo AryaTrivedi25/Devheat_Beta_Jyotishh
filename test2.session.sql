@@ -68,11 +68,11 @@ INSERT INTO YASHSOJITRASU_pokemon VALUES (1, "bulbasaur");
 
 --@block
 
-SELECT * FROM YASHSOJITRASU_pokemon;
+SELECT * FROM user;
 
 --@block
 
-DELETE FROM user WHERE u_name LIKE 'YASHSOJITRASU';
+DELETE FROM user WHERE u_name LIKE 'yashsojitra97';
 
 --@block
 
