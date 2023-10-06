@@ -6,6 +6,8 @@ This project's v1.0 is ready which provides basic functionalities like search, p
 
 [link to our project demonstration](https://drive.google.com/file/d/1D8WsIbrS5veOuOVS-ILV5PqLscJOffHy/view?usp=drive_link)
 
+In order to run the project first clone it to the the local system and then run 'npm install' command and then run 'npm start' command.(node.js required to run)
+
 You can use visit the website freely but in order to add the pokemons to favourites section you need to create a user account
 
 Technologies used: HTML CSS JS Node.js Express.js JWT and MySQL
